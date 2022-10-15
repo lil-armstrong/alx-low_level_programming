@@ -18,8 +18,8 @@ int main(void)
 	c = 'A';
 	while (c <= 'Z')
 	{
-        	putchar(c);
-                c += 1;
+		putchar(c);
+		c += 1;
 	}
 	putchar('\n');
 	return (0);
