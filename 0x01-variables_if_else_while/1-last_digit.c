@@ -11,12 +11,13 @@
 int main(void)
 {
 	int n;
+	char message[30];
+	int lastDigit;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	char message[30];
+	lastDigit = (n % 10);
 
-	int lastDigit = (n % 10);
 	if (lastDigit == 0)
 		strcpy(message, "0");
 	else
