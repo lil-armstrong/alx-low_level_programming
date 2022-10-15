@@ -14,15 +14,13 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	/* Get length of int variable */
-	int len = snprintf(NULL, 0, "%d", n);
 	char message[30];
 
-	int lastDigit = (unsigned long) abs(n % 10);
-	if (lastDigit >= 0)
+	int lastDigit = (n % 10);
+	if (lastDigit == 0)
+		strcpy(message, "0");
+	else
 	{
-		if (lastDigit == 0)
-			strcpy(message, "0");
 		if (lastDigit <= 5)
 			strcpy(message, "less than 6 and not 0");
 		else
