@@ -12,7 +12,7 @@ int main(void)
 	char str1[65] = "and that place of art is useful\" - Dora Korpar, 2015-10-19";
 
 	str1[strlen(str1)] = '\n';
-	fprintf(stderr, str1);
+	fprintf(stderr, "%s", str1);
 	return (1);
 }
 
