@@ -3,7 +3,7 @@
 /* more headers goes there */
 
 /**
- * main - Entry function 
+ * main - Entry function
  *
  * Description: The main entry function
  * Return: void
@@ -14,9 +14,9 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	if(n>0)
-		printf("%d is positive\r\n", n);
+	if(n > 0)
+		printf("%d is positive.\n", n);
 	else
-		printf("%d is negative\r\n", n)
+		printf("%d is negative.\n", n)
 	return (0);
 }
