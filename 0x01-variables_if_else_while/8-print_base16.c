@@ -8,16 +8,17 @@
  */
 int main(void)
 {
-	char c = '1';
+	int i = 1;
+	int remainder;
 
-	while (c <= '9')
+	while (i < 16)
 	{
-		putchar(c++);
-	}
-	c = 'a';
-	while (c <= 'f')
-	{
-		putchar(c++);
+		remainder = i % 16;
+		if (remainder < 10)
+			putchar(48 + remainder);
+		else
+			putchar(87 + remainder);
+		++i;
 	}
 	putchar(10);
 	return (0);
