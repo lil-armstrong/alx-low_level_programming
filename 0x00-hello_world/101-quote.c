@@ -13,6 +13,6 @@ int main(void)
 
 	str1[strlen(str1)] = '\n';
 	write(2, str1, strlen(str1));
-	exit (1);
+	exit(EXIT_FAILURE);
 }
 
