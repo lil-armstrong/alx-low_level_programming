@@ -10,7 +10,7 @@
 int main(void)
 {
 	char str1[65] = "and that place of art is useful\" - Dora Korpar, 2015-10-19";
-	
+
 	str1[strlen(str1)] = '\n';
 	write(2, str1, strlen(str1));
 	return (1);
