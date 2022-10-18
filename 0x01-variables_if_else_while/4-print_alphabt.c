@@ -12,9 +12,8 @@ int main(void)
 
 	while (i <= 'z')
 	{
-		if(i == 'q')
-			continue;
-		putchar(i);
+		if(i != 'q')
+			putchar(i);
 		i += 1;
 	}
 	putchar(10);
