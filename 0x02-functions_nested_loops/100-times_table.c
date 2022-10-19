@@ -26,7 +26,10 @@ void print_times_table(int p)
 			else
 			{
 				if (n > 0)
+				{
 					_putchar(' ');
+					_putchar(' ');
+				}
 			}
 			_putchar((o % 10) + '0');
 			n++;
