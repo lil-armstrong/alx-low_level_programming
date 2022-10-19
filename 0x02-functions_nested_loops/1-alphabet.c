@@ -16,5 +16,4 @@
 		_putchar(c++);
 	}
 	_putchar(10);
-	return (0);
  }
