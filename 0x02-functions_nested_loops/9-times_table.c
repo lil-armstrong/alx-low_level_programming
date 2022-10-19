@@ -16,7 +16,7 @@ void times_table(void)
 			_putchar(o + '0');
 			if (o > 9)
 			{
-				_putchar((o / 10));
+				_putchar((o / 10) + '0');
 				_putchar((o % 10) + '0');
 			}
 			if (n < 9)
