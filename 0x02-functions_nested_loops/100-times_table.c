@@ -2,7 +2,7 @@
 
 /**
  * print_times_table - prints n times table, starting with 0
- * @b - time table to print
+ * @p - time table to print
  */
 void print_times_table(int p)
 {
@@ -18,8 +18,8 @@ void print_times_table(int p)
 			{
 				_putchar(',');
 				_putchar(' ');
-	 			_putchar(' ');
- 			}
+				_putchar(' ');
+			}
 			if (o > 99)
 			{
 				_putchar((o / 100) + '0');
