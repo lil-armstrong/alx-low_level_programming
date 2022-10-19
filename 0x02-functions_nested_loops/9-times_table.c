@@ -13,6 +13,13 @@ void times_table(void)
 		while (n <= 9)
 		{
 			o = m * n;
+			if (n > 0 &a7n < 9)
+			{
+				_putchar(',');
+				_putchar(' ');
+				if (o < 10)
+					_putchar(' ');
+			}
 			if (o > 9)
 			{
 				_putchar((o / 10) + '0');
@@ -21,13 +28,6 @@ void times_table(void)
 			else
 			{
 				_putchar(o + '0');
-			}
-			if (n < 9)
-			{
-				_putchar(',');
-				_putchar(' ');
-				if (o < 10)
-					_putchar(' ');
 			}
 			n++;
 		}
