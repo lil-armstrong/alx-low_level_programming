@@ -14,7 +14,7 @@ void print_times_table(int p)
 		while (n <= p)
 		{
 			o = m * n;
-			if (n > 0 && n <= 9)
+			if (n > 0 && n <= p)
 			{
 				_putchar(',');
 				_putchar(' ');
