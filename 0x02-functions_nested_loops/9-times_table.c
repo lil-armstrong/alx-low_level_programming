@@ -20,8 +20,8 @@ void times_table(void)
 			}
 			else
 			{
-				_putchar(o + '0');
 				_putchar(' ');
+				_putchar(o + '0');
 			}
 			if (n < 9)
 			{
