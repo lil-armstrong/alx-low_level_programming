@@ -24,7 +24,8 @@ void times_table(void)
 			}
 			else
 			{
-				n > 0 && _putchar(' ');
+				if (n > 0)
+					_putchar(' ');
 			}
 			_putchar((o % 10) + '0');
 			n++;
