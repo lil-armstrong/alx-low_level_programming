@@ -20,15 +20,16 @@ void print_times_table(int p)
 				_putchar(' ');
 				_putchar(' ');
 			}
+		}
 			if (o > 99)
 			{
 				_putchar((o / 100) + '0');
+				_putchar((o / 10) + '0');
 			}
 			else if (o > 9)
 			{
 				_putchar((o / 10) + '0');
-			}
-			{
+			}else{
 				if (n > 0)
 				{
 					_putchar(' ');
