@@ -28,18 +28,20 @@ int main(void)
 
 		if (m3 && m5)
 		{
-			printf("%s ", "FizzBuzz");
+			printf("%s", "FizzBuzz");
 		}
 		else if (m3)
 		{
-			printf("%s ", "Fizz");
+			printf("%s", "Fizz");
 		}
 		else if (m5)
 		{
-			printf("%s ", "Buzz");
+			printf("%s", "Buzz");
 		}
 		else
-			printf("%d ", count);
+			printf("%d", count);
+		if (count < limit)
+			printf(" ");
 		count++;
 	}
 	printf("\n");
