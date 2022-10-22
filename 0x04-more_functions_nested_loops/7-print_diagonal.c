@@ -17,7 +17,7 @@ void print_diagonal(int n)
 			spacing = 0;
 			while (spacing < col)
 			{
-				putchar(' ');
+				_putchar(' ');
 				spacing++;
 			}
 			_putchar('\\');
