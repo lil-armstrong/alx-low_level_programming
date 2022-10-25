@@ -2,7 +2,7 @@
 
 /**
  * rev_string - reverses a string in place
- * @str: array pointer of type char
+ * @s: array pointer of type char
  *
  */
 
