@@ -6,23 +6,24 @@
  *
  */
 
-void rev_string(char *str)
+void rev_string(char *s)
 {
-	int start = 0, len = 0;
+	int left = 0, right = 0;
 	char temp;
 
-	while (*(str + len))
+	/* Get the length of the string*/
+	while (*(s + right))
 	{
-		len++;
+		right++;
 	}
 
-	while (len != start)
+	while (right > left)
 	{
-		--len;
-		temp = *(s + len);
-		*(s + len) = *(s + start);
-		*(s + start) = temp;
-		start++;
+		--right;
+		temp = *(s + right);
+		*(s + right) = *(s + left);
+		*(s + left) = temp;
+		left++;
 	}
 }
 
