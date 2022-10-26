@@ -9,22 +9,20 @@
 
 void puts_half(char *str)
 {
-	int left = 0, right = 0;
+	int i, len = 0;
 
 	/* Get the length of the string*/
-	while (*(str + right))
+	while (str[len] != '\0')
 	{
-		if (*(str + right) == '\0')
-			break;
-		right++;
+		len++;
 	}
-	left = right / 2;
-	if (right % 2 != 0)
-		left = right - (right - 2) / 2;
+	i = (len - 1) / 2;
+	if (len % 2 != 0)
+		i = len - (len - 1) / 2;
 
-	while (left < right)
+	while (i < len)
 	{
-		_putchar(*(str + left++));
+		_putchar(str[i++]);
 	}
 	_putchar(10);
 }
