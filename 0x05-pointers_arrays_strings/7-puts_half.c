@@ -20,11 +20,11 @@ void puts_half(char *str)
 	}
 	left = right / 2;
 	if (right % 2 != 0)
-		left = (right - 1) / 2;
+		left = (right - 2 / 2;
 
 	while (left < right)
 	{
-		_putchar(*(str + ++left));
+		_putchar(*(str + left++));
 	}
 	_putchar(10);
 }
