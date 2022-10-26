@@ -14,7 +14,7 @@ void puts_half(char *str)
 	/* Get the length of the string*/
 	while (*(str + right))
 	{
-	 	if(*(str + right) == '\0')
+		if (*(str + right) == '\0')
 			break;
 		right++;
 	}
