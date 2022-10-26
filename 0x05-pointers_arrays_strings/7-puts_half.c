@@ -19,14 +19,13 @@ void puts_half(char *str)
 		right++;
 	}
 
-	if ((left - 1) / 2)
-		_putchar(*(str + ((left - 1)/2)));
+	left = (right - 1) / 2;
+	if (right % 2 != 0)
+		_putchar(*(str + left));
 
-	while (right > left)
+	while (left < right)
 	{
-		--right;
-		_putchar(*(str + right));
-		left++;
+		_putchar(*(str + left++));
 	}
 }
 
