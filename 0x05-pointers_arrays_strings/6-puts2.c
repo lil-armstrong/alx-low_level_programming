@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- *put2 -  prints every even character of a string,
+ *puts2 -  prints every even character of a string,
  * starting with the first character, followed by a new line
  * @str: array pointer of type char
  *
  */
 
-void put2(char *str)
+void puts2(char *str)
 {
 	int n = 0;
 
