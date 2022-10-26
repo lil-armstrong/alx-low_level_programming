@@ -24,7 +24,7 @@ void puts_half(char *str)
 
 	while (left < right)
 	{
-		_putchar(*(str + left++));
+		_putchar(*(str + ++left));
 	}
 	_putchar(10);
 }
