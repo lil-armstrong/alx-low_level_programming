@@ -14,7 +14,7 @@ void put2(char *str)
 	while (*(str + n))
 	{
 		_putchar(*(str + n));
-		n+2;
+		n+=2;
 	}
 	_putchar(10);
 }
