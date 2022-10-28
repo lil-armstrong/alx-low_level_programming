@@ -27,25 +27,31 @@ char _capitalize(char c)
 
 char *cap_string(char *s)
 {
-	int i = 0, separator = 0;
+	int i = 0, j = 0, separator = 0;
+	char spe[13] = {' ', '\t', '\n', ',', ';', '.',
+		'!', '?', '"', '(', ')', '{', '}'};
 
 	while (*(s + i))
 	{
-		if (*(s + i) == ',' || *(s + i) == ';' || *(s + i) == ' '
-			|| *(s + i) == '.' || *(s + i) == '!'
-			|| *(s + i) == '?' || *(s + i) == '"'
-			|| *(s + i) == '(' || *(s + i) == ')'
-			|| *(s + i) == '{' || *(s + i) == '}'
-			|| *(s + i) == '\t' || *(s + i) == '\n')
+		while (spe[j])
 		{
-			if (*(s + i) == '\t')
-				s[i] = ' ';
-			i++;
-			continue;
+			if (s[i] == spe[j])
+			{
+				if (s[i] == '\t')
+					s[i] = ' ';
+				++i;
+				separator = 1;
+				j = -1;
+			}
+			++j;
 		}
-		if ((!i || separator) && *(s + i))
-			s[i] = _capitalize(*(s + i));
-		separator = 0;
+
+		if ((!i || separator) && s[i])
+		{
+			s[i] = _capitalize(s[i]);
+			separator = 0;
+		}
+		j = 0;
 		++i;
 	}
 	return (s);
