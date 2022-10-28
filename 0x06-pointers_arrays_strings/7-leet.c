@@ -15,15 +15,14 @@ char *leet(char *s)
 		'7', 't',
 		'1', 'l'
 	};
-	int i = 0, j, diff = (int)('a' - 'A');
+	int i = 0, j, diff = ('a' - 'A');
 
 	while (s[i])
 	{
 		for (j = 1; m[j]; j += 2)
 		{
-			if (s[i] == m[j] || s[i] == (char)(m[j] - diff))
+			if (s[i] == m[j] || s[i] == (m[j] - diff))
 			{
-				m[j]);
 				s[i] = m[j - 1];
 				break;
 			}
