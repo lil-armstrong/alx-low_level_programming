@@ -17,7 +17,7 @@ char *_strncat(char *dest, char *src, int n)
 
 	do {
 		*(dest + i) = *(src),
-		nbytes += sizeof(char);
+		nbytes++;
 		i++;
 	} while (*(src++) && nbytes < n);
 	*(dest + i) = '\0';
