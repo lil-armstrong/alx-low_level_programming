@@ -24,5 +24,5 @@ void print_diagsums(int *a, int size)
 				rsum += *(a + (size * i + ((size - 1) - i)));
 		}
 	}
-	printf("%d, %d\n", lsum, rsum);
+	printf("%lu, %lu\n", lsum, rsum);
 }
