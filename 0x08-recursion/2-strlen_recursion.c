@@ -7,14 +7,14 @@
  *
  * Return: total length of the string
  */
-int charLoop (char *s, int index)
+int charLoop(char *s, int index)
 {
 	if (*s)
 	{
 		++index;
-		return charLoop((s + 1), index);
+		return (charLoop((s + 1), index));
 	}
-	return index;
+	return (index);
 }
 
 /**
