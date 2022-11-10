@@ -1,46 +1,44 @@
-#include  <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include "main.h"
 
 /**
- * main - Main function. Prints the min number of coins
- * to make change for an amount of money
- *
- * @argc: number of command line arguments
+ * main - prints the minimum number of coins to
+ * make change for an amount of money
+ * @argc: number of arguments
  * @argv: array of arguments
  *
- * Return: 0 (success), 1 (error)
+ * Return: 0 (Success), 1 (Error)
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	signed int cents, result = 0, i = 0;
-	int c[] = {25, 10, 5, 2, 1};
-	int *coins;
-
-	coins = c;
+	int num, j, result;
+	int coins[] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
 	{
-		puts("Error");
+		printf("Error\n");
 		return (1);
 	}
-	cents = atoi(*(argv + 1));
-	if (cents < 0)
+
+	num = atoi(argv[1]);
+	result = 0;
+
+	if (num < 0)
 	{
-		puts("0");
+		printf("0\n");
+		return (0);
 	}
-	while (*(coins + i) && cents >= 0 && i < 5)
+
+	for (j = 0; j < 5 && num >= 0; j++)
 	{
-		printf("coins: %d\n", *(coins+i));
-		while (cents >= *(coins + i))
+		while (num >= coins[j])
 		{
 			result++;
-			cents -= *(coins + i);
-			printf("result: %d, cents: %d\n", result,cents);
-
+			num -= coins[j];
 		}
-		i++;
 	}
+
 	printf("%d\n", result);
 	return (0);
 }
