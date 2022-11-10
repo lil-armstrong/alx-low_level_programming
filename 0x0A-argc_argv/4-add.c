@@ -19,7 +19,7 @@ int main(int argc __attribute__((unused)), char **argv)
 	while (*(++argv))
 	{
 		arg = atoi(*argv);
-		if (arg)
+		if (**argv >= '0' && **argv <= '9')
 		{
 			result += arg;
 		}
