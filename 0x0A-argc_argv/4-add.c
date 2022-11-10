@@ -25,7 +25,7 @@ int main(int argc __attribute__((unused)), char **argv)
 		}
 		else
 		{
-			printf("Error\n");
+			puts("Error");
 			return (1);
 		}
 	}
