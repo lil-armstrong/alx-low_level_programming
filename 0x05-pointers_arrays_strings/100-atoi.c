@@ -17,8 +17,10 @@ int _atoi(char *s)
 		if (i && s[i - 1] == '-')
 			negate = !negate;
 		if (s[i] >= '0' && s[i] <= '9')
+		{
 			if (start == -1)
 				start = i;
+		}
 		else if (start != -1)
 			break;
 		++i;
