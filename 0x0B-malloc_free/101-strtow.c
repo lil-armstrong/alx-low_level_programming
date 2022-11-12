@@ -46,5 +46,5 @@ char **strtow(char *str)
 			col++;
 	}
 	pt[row] = NULL;
-	return (pt);
+	return (row ? pt : NULL);
 }
