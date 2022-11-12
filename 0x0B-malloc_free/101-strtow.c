@@ -16,7 +16,7 @@ char **strtow(char *str)
 	if (!str || str == NULL)
 		return (NULL);
 	while (str[len] != '\0')
-		len++
+		len++;
 	pt = (char **) malloc(sizeof(char *) * len + 1);
 	while (col < len)
 	{
