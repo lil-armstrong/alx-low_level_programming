@@ -10,15 +10,19 @@
  */
 char **strtow(char *str)
 {
-	int row = 0, col = 0, len = 0, tlen = 0, j;
+	int row = 0, col = 0, len = 0, tlen = 0, j, rlen = 0;
 	char **pt;
 
 	if (!str || str == NULL)
 		return (NULL);
 	while (str[len] != '\0')
-		len++;
+	{
+		if (str[rlen] != ' ')
+			len++;
+		rlen++;
+	}
 	pt = (char **) malloc(sizeof(char *) * len + 1);
-	while (col < len)
+	while (col < rlen)
 	{
 		tlen = 0;
 		while (str[col + tlen] != ' ')
@@ -30,9 +34,7 @@ char **strtow(char *str)
 			{
 				j = col;
 				while (--j)
-				{
 					free(pt[j]);
-				}
 				free(pt);
 			}
 			j = 0;
