@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -13,28 +12,31 @@ char **strtow(char *str)
 	int row = 0, col = 0, len = 0, tlen = 0, j, rlen = 0;
 	char **pt;
 
-	if (!str || str == NULL)
+	if (str == NULL)
 		return (NULL);
-	while (str[len] != '\0')
+	while (str[rlen] != '\0')
 	{
 		if (str[rlen] != ' ')
 			len++;
 		rlen++;
 	}
-	pt = (char **) malloc(sizeof(char *) * len + 1);
-	while (col < rlen)
+	pt = (char **) malloc(sizeof(char *) * len );
+	while (len && col < rlen)
 	{
 		tlen = 0;
 		while (str[col + tlen] != ' ')
 			tlen++;
 		if (tlen)
 		{
+			total_chars += tlen;
 			pt[row] = malloc(sizeof(char) * tlen);
 			if (pt[row] == NULL)
 			{
 				j = col;
 				while (--j)
+				{
 					free(pt[j]);
+				}
 				free(pt);
 			}
 			j = 0;
@@ -45,6 +47,5 @@ char **strtow(char *str)
 		else
 			col++;
 	}
-	pt[row] = NULL;
 	return (row ? pt : NULL);
 }
