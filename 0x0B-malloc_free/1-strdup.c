@@ -3,11 +3,24 @@
 #include "main.h"
 
 /**
- * _strdup: duplicates a string in memory
+ * _strdup - duplicates a string in memory
  * @str: string to duplicate
  * Return: char* (success), NULL (fail)
  */
 char *_strdup(char *str)
 {
-	return ();
+	char *ptr;
+	int i = 0;
+
+	if (str == NULL)
+		return (NULL);
+
+	ptr = malloc(sizeof(str));
+
+	while (*(str + i))
+	{
+		*(ptr + i) = *(str + i);
+		++i;
+	}
+	return (ptr);
 }
