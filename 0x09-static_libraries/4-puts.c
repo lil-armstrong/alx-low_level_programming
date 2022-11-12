@@ -13,5 +13,4 @@ void _puts(char *s)
 	while (*(s + i))
 		_putchar(*(s + i));
 	_putchar(10);
-	return (0);
 }
