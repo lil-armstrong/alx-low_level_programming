@@ -17,7 +17,7 @@ int *length_with_word_count(char *str, char sep)
 
 	while (str[len] != '\0')
 	{
-		if (str[len] != sep)
+		if (str[len] == sep)
 		{
 			flag = 0;
 		}
@@ -52,7 +52,6 @@ char **strtow(char *str)
 	words = count[1];
 
 	pt = (char **) malloc(sizeof(char *) * (words));
-	printf("Word count: %d\n", words);
 	while (pt != NULL && len && col < len)
 	{
 		word_count = 0;
