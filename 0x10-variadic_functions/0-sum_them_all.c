@@ -1,6 +1,11 @@
 #include <stdarg.h>
 #include <stdio.h>
 
+/**
+ * sum_them_all - sums all its parameters
+ * @n: nunber of arguments
+ * Return: sum of all int args supplied
+ */
 int sum_them_all(const unsigned int n, ...)
 {
 	va_list al;
