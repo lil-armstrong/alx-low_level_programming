@@ -1,4 +1,5 @@
 #include "variadic_functions"
+
 /**
  * sum_them_all - sums all its parameters
  * @n: nunber of arguments
