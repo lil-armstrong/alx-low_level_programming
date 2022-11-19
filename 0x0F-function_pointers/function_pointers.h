@@ -1,5 +1,6 @@
+#include <stddef.h>
 #ifndef FUNC_PTR_H
-#define  FUNC_PTR_H
+#define FUNC_PTR_H
 
 int int_index(int *array, int size, int (*cmp)(int));
 void print_name(char *name, void (*f)(char *));
