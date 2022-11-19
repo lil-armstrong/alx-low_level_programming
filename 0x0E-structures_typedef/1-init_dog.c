@@ -2,6 +2,7 @@
 
 /**
  * init_dog - initialize the dog variable
+ * @d: struct dog
  * @name: name field
  * @age: age field
  * @owner: owner field
