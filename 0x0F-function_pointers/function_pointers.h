@@ -1,4 +1,5 @@
 #include <stddef.h>
+#include <stdlib.h>
 #ifndef FUNC_PTR_H
 #define FUNC_PTR_H
 
