@@ -1,5 +1,3 @@
-#include <stdlib>
-#include <stdio.h>
 #ifndef FUNC_PTR_H
 #define  FUNC_PTR_H
 
