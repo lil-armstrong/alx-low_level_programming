@@ -1,4 +1,5 @@
 #include "dog.h"
+#include <stddef.h>
 
 /**
  * new_dog - New dog
@@ -12,10 +13,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t dg;
 	dog_t *d;
 
-	d = &dg;
-	d->age = age;
-	d->name = name;
-	d->owner = owner;
+	if (d != NULL)
+	{
+		d = &dg;
+		d->age = age;
+		d->name = name;
+		d->owner = owner;
 
-	return (d);
+		return (d);
+	}
+	return (NULL);
 }
