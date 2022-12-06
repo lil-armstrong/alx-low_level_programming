@@ -1,3 +1,4 @@
+
 #include "main.h"
 
 /**
@@ -19,15 +20,34 @@ int append_text_to_file(const char *filename, char *text_content)
 		if (fd == -1)
 		{
 			err = "File cannot be opened or might  written to or truncated";
-			write(STDERR_FILENO, err, strlen(err));
+			write(STDERR_FILENO, err, _strlen(err));
 			return (-1);
 		}
 
 		if (text_content != NULL)
-			write(fd, text_content, strlen(text_content));
+			write(fd, text_content, _strlen(text_content));
 
 		return (1);
 	}
 
 	return (-1);
+}
+
+
+
+/**
+ * _strlen - gets string length
+ * @str: NULL terminated character string
+ * Return: int
+ */
+int _strlen(char *str)
+{
+	int len;
+
+	while (str[len] != '\0')
+	{
+		len++;
+	}
+
+	return (len);
 }

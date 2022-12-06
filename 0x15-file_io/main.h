@@ -14,5 +14,5 @@ void _putchar(char s);
 int cp (char *file_from, char *file_to);
 void printUsage(void);
 void closeFD (int fd);
-
+int _strlen (char *str);
 #endif
