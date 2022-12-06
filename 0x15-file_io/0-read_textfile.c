@@ -1,3 +1,4 @@
+
 #include "main.h"
 
 /**
@@ -10,30 +11,25 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 
 	int fd, i;
-	char *buffer = malloc((sizeof(char) * letters) + 1);
+	ssize_t r, w;
+	char *buffer = malloc(sizeof(char) * letters);
 
-	if (filename == NULL)
-		return (0);
-
-	if (buffer != NULL)
+	if (filename != NULL)
 	{
-		fd = open(filename, O_RDONLY, 0600);
-
-		if (fd == -1)
-			return (0);
-
-		read(fd, buffer, letters);
-		buffer[letters + 1] = '\0';
-
-		for (i = 0; buffer[i] != '\0'; ++i)
+		if (buffer != NULL)
 		{
-			_putchar(buffer[i]);
-		}
-		_putchar(10);
+			fd = open(filename, O_RDONLY, 0600);
 
-		free(buffer);
-		close(fd);
-		return (i);
+			if (fd == -1)
+				return (0);
+
+			r = read(fd, buffer, letters);
+			w = write(STDOUT_FILENO, buffer, r);
+
+			free(buffer);
+			close(fd);
+			return (w);
+		}
 	}
 	return (0);
 }
