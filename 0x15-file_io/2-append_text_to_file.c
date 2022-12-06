@@ -1,4 +1,3 @@
-
 #include "main.h"
 
 /**
@@ -9,24 +8,22 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fd;
+	int fd, w;
 	char *err;
-	mode_t mode = 0600;
 
 	if (filename != NULL)
 	{
-		fd = open(filename, O_WRONLY | O_APPEND, mode);
+		fd = open(filename, O_WRONLY | O_APPEND);
 
-		if (fd == -1)
+		if (text_content != NULL)
+			w = write(fd, text_content, _strlen(text_content));
+
+		if (fd == -1 || w == -1)
 		{
-			err = "File cannot be opened or might  written to or truncated";
-			write(STDERR_FILENO, err, _strlen(err));
 			return (-1);
 		}
 
-		if (text_content != NULL)
-			write(fd, text_content, _strlen(text_content));
-
+		close(fd);
 		return (1);
 	}
 
