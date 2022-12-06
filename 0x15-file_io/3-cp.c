@@ -31,7 +31,6 @@ int main(int argc, char *argv[])
 	file_from = argv[1];
 	file_to = argv[2];
 
-	printf("from: %s, to: %s\n", file_from, file_to);
 	if (!strlen(file_to) || !strlen(file_from))
 	{
 		printUsage();
