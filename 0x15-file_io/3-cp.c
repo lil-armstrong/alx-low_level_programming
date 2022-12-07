@@ -21,7 +21,6 @@
 int main(int argc, char *argv[])
 {
 	char *file_from, *file_to;
-	int res;
 
 	if (argc != 3)
 	{
@@ -36,7 +35,7 @@ int main(int argc, char *argv[])
 		printUsage();
 	}
 
-	res = cp(file_from, file_to);
+	cp(file_from, file_to);
 
 	return (0);
 }
