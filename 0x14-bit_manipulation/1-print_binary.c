@@ -20,7 +20,7 @@ void print_binary(unsigned long int n)
 				state = ON;
 			_putchar('1');
 		}
-		else if (state || !state && c == 0)
+		else if (state || (!state && c == 0))
 			_putchar('0');
 	}
 
