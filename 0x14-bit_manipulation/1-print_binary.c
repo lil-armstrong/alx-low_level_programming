@@ -1,3 +1,4 @@
+
 #include "main.h"
 
 #define ON 1
@@ -8,21 +9,24 @@
  */
 void print_binary(unsigned long int n)
 {
-	int c, result, state = OFF;
+	int shifts;
+	unsigned long int temp;
 
-	for (c = 31; c >= 0; --c)
+	if (n == 0)
 	{
-		result = n >> c;
-
-		if (result & 1)
-		{
-			if (!state)
-				state = ON;
-			_putchar('1');
-		}
-		else if (state || (!state && c == 0))
-			_putchar('0');
+		printf("0");
+		return;
 	}
 
-	_putchar(10);
+	for (temp = n, shifts = 0; (temp >>= 1); shifts++)
+		;
+
+	for (; shifts >= 0; --shifts)
+	{
+
+		if ((n >> shifts) & 1)
+			_putchar('1');
+		else
+			_putchar('0');
+	}
 }
