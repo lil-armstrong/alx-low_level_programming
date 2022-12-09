@@ -1,69 +1,30 @@
+
 #include "main.h"
 
-int binary_strlen(const char *);
-long int _pow(int i, int e);
-int char_to_num(char c);
-
 /**
- * binary_to_uint - converts a binary number to an unsigned int
- * @b: NULL terminated character string
- * Return: converted number (success), 0 (fail)
+ * binary_to_uint - convert a binary number to an unsigned int
+ * @b: char string
+ * Return: converted decimal number or 0 if there is an unconvertable char
  */
 unsigned int binary_to_uint(const char *b)
 {
-	const int len = binary_strlen(b);
-	int i = len, result = 0;
+	unsigned int total, power;
+	int len;
 
-	if (b != NULL)
+	if (b == NULL)
+		return (0);
+
+	for (len = 0; b[len]; len++)
 	{
-		while (i > 0)
-		{
-			result += char_to_num(b[i - 1]) * _pow(2, len - i);
-			--i;
-		}
-		return (result);
-	}
-	return (0);
-}
-
-/**
- * char_to_num - converts a char to number
- * @c: character
- * Return: int
- */
-int char_to_num(char c)
-{
-	return (((int) c) - 48);
-}
-
-/**
- * _pow - calculates the power of i
- * @i: number to get power of
- * @e: raise power count
- * Return: int
- */
-long int _pow(int i, int e)
-{
-	if (e == 0)
-		return (1);
-
-	return (i * _pow(i, --e));
-}
-
-/**
- * binary_strlen - gets length of valid binary string
- * @c: NULL terminated character string
- * Return: length of string
- */
-int binary_strlen(const char *c)
-{
-	int len = 0;
-
-	while (c[len] != '\0')
-	{
-		if (c[len] != '0' && c[len] != '1')
+		if (b[len] != '0' && b[len] != '1')
 			return (0);
-		len++;
 	}
-	return (len);
+
+	for (power = 1, total = 0, len--; len >= 0; len--, power *= 2)
+	{
+		if (b[len] == '1')
+			total += power;
+	}
+
+	return (total);
 }
