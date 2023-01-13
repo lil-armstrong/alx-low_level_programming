@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- * @print_dlistint - Print all theelements of adlistint_t list
+ * print_dlistint - Print all the elements of a dlistint_t list
  * @h: head of list
- * return: number of nodes (int)
+ * Return: number of nodes (int)
  */
 size_t print_dlistint(const dlistint_t *h)
 {
@@ -15,8 +15,8 @@ size_t print_dlistint(const dlistint_t *h)
 		if (h->prev == NULL)
 		{
 			current = h;
-			do
-			{
+			/* clang-format off */
+			do {
 				printf("%d\n", current->n);
 				++nnodes;
 				current = current->next;
