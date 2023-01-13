@@ -20,6 +20,7 @@ size_t dlistint_len(const dlistint_t *h)
 			/* clang-format off */
 			do {
 				++len;
+				current = current->next;
 			} while(current != NULL);
 		}
 	}
