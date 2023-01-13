@@ -13,15 +13,14 @@ size_t dlistint_len(const dlistint_t *h)
 
 	if (h != NULL)
 	{
-		if (h->prev == NULL)
-		{
-			current = h;
+		while (h->prev != NULL)
+			h = h->prev;
 
-			/* clang-format off */
-			do {
-				++len;
-				current = current->next;
-			} while(current != NULL);
+		current = h;
+		while (current != NULL)
+		{
+			++len;
+			current = current->next;
 		}
 	}
 	return (len);
