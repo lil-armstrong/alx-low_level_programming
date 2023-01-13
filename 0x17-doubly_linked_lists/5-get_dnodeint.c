@@ -11,17 +11,19 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	dlistint_t *node = NULL;
 	const unsigned int len = dlistint_len(head);
 
-	if (index < len - 1)
+	if (head != NULL)
 	{
-		node = head;
-
-		while (index && node != NULL)
+		if (index < len - 1)
 		{
-			node = node->next;
-			--index;
+			node = head;
+
+			while (index && node != NULL)
+			{
+				node = node->next;
+				--index;
+			}
 		}
 	}
-
 	return (node);
 }
 
