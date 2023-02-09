@@ -12,8 +12,8 @@ char *_strchr(char *s, char c)
 	/* clang-format off */
 	do {
 		if (*s == c)
-			return (s);		
-		
+			return (s);
+
 	} while (*s++);
 	return (NULL);
 }
