@@ -11,12 +11,12 @@ char *_strstr(char *haystack, char *needle)
 {
 	int found, j;
 
-	while (*haystack)
-	{
-		found = 0;
-		for (j = 0; *(needle + j); ++j)
+	/* clang-format off */
+	do {
+		found = 1;
+		for (j = 0; needle[j] != '\0'; ++j)
 		{
-			if (*(haystack + j) != *(needle + j))
+			if (haystack[j] != needle[j])
 			{
 				found = 0;
 				break;
@@ -26,8 +26,8 @@ char *_strstr(char *haystack, char *needle)
 
 		if (found)
 			return (haystack);
-		haystack++;
 	}
+	while (*haystack++);
 
 	return (NULL);
 }
