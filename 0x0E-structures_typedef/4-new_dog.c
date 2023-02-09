@@ -47,7 +47,7 @@ char *_strcpy(char *str)
 	while (str[len] != '\0')
 		len++;
 
-	new_string = malloc(sizeof(len));
+	new_string = malloc(sizeof(char) * len);
 	if (new_string != NULL)
 	{
 		len = 0;
