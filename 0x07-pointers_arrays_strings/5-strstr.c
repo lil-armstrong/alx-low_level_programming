@@ -26,8 +26,7 @@ char *_strstr(char *haystack, char *needle)
 
 		if (found)
 			return (haystack);
-	}
-	while (*haystack++);
+	} while (*haystack++);
 
 	return (NULL);
 }
