@@ -14,20 +14,24 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog = malloc(sizeof(dog_t));
 	if (dog != NULL)
 	{
-		dog->name = _strcpy(name);
+		dog->name = malloc(sizeof(char) * _strlen(name));
 		if (dog->name == NULL)
 		{
 			free(dog);
 			return (NULL);
 		}
 
-		dog->owner = _strcpy(owner);
+
+		_strcpy(name, dog->name);
+
+		dog->owner = malloc(sizeof(char) * _strlen(owner));
 		if (dog->owner == NULL)
 		{
-			free(dog);
 			free(dog->name);
+			free(dog);
 			return (NULL);
 		}
+		_strcpy(owner, dog->owner);
 		dog->age = age;
 	}
 
@@ -35,29 +39,38 @@ dog_t *new_dog(char *name, float age, char *owner)
 }
 
 /**
- * _strcpy - Create a copy of a string
- * @str: null terminated string
- * Return: pointer to new string (SUCCESS) NULL (FAIL)
+ * _strlen - get length of string
+ * @s: null terminated string
+ * Return: length of string
  */
-char *_strcpy(char *str)
+
+int _strlen(char *s)
 {
 	int len = 0;
-	char *new_string = NULL;
 
-	while (str[len] != '\0')
-		len++;
+	while (s[len] != '\0')
+		++len;
 
-	new_string = malloc(sizeof(char) * len);
-	if (new_string != NULL)
+	return (len);
+}
+
+/**
+ * _strcpy - Copy source string to destination string
+ * @src: source null terminated string
+ * @dest: destination null terminated string
+ * Return: void
+ */
+void _strcpy(char *src, char *dest)
+{
+	int i = 0;
+
+	if (src != NULL)
 	{
-		len = 0;
-		while (str[len] != '\0')
+		while (src[i] != '\0')
 		{
-			new_string[len] = str[len];
-			len++;
+			dest[i] = src[i];
+			++i;
 		}
-		new_string[len] = '\0';
 	}
-
-	return (new_string);
+	dest[i] = '\0';
 }
