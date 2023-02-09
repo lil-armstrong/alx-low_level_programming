@@ -8,13 +8,12 @@
  */
 char *_strchr(char *s, char c)
 {
-	while (*s)
-	{
+
+	/* clang-format off */
+	do {
 		if (*s == c)
-			return (s--);
-		if (*s == 0)
-			break;
-		s++;
-	}
+			return (s);		
+		
+	} while (*s++);
 	return (NULL);
 }
