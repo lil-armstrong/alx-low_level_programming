@@ -1,5 +1,4 @@
 #include "dog.h"
-#include <stddef.h>
 
 /**
  * new_dog - New dog
@@ -14,10 +13,38 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (dog != NULL)
 	{
-		dog->name = name;
+		dog->name = _strcpy(name);
+		dog->owner = _strcpy(owner);
 		dog->age = age;
-		dog->owner = owner;
 	}
 
 	return (dog);
+}
+
+/**
+ * _strcpy - Create a copy of a string
+ * @str: null terminated string
+ * Return: pointer to new string (SUCCESS) NULL (FAIL)
+ */
+char *_strcpy(char *str)
+{
+	int len = 0;
+	char *new_string = NULL;
+
+	while (str[len] != '\0')
+		len++;
+
+	new_string = malloc(sizeof(len));
+	if (new_string != NULL)
+	{
+		len = 0;
+		while (str[len] != '\0')
+		{
+			new_string[len] = str[len];
+			len++;
+		}
+		new_string[len] = '\0';
+	}
+
+	return (new_string);
 }
