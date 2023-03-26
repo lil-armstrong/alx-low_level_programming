@@ -2,7 +2,8 @@
 CC := gcc
 SRC := main.c school.c
 
-all: build
-
-build:
+all: $(SRC)
 	$(CC) $(SRC) -o school 
+
+clean:
+	rm -f school
