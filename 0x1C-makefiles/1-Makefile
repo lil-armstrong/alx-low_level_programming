@@ -1,7 +1,6 @@
 
 CC := gcc
-SRC := $(wildcard *.c)
-BINS := $(SRC:%.c=%)
+SRC := main.c school.c
 
 all: build
 
