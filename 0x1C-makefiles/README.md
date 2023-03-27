@@ -36,27 +36,52 @@ Requirements:
         NAME: the name of the executable
     The all rule should recompile only the updated source files
     You are not allowed to have a list of all the .o files
-
+```bash
+gcc    -c -o main.o main.c
+gcc    -c -o school.o school.c
+gcc main.o school.o -o school
+```
 - 3. make -f 3-Makefile 
-Requirements:
+**Requirements:**
 
-    name of the executable: school
-    rules: all, clean, oclean, fclean, re
-        all: builds your executable
-        clean: deletes all Emacs and Vim temporary files along with the executable
-        oclean: deletes the object files
-        fclean: deletes all Emacs and Vim temporary files, the executable, and the object files
-        re: forces recompilation of all source files
+- name of the executable: `school`
+- rules: `all, clean, oclean, fclean, re`
+    - `all`: builds your executable
+    - `clean`: deletes all Emacs and Vim temporary files along with the executable
+    - `oclean`: deletes the object files
+    - `fclean`: deletes all Emacs and Vim temporary files, the executable, and the object files
+    - `re`: forces recompilation of all source files
     variables: CC, SRC, OBJ, NAME, RM
-        CC: the compiler to be used
-        SRC: the .c files
-        OBJ: the .o files
-        NAME: the name of the executable
-        RM: the program to delete files
-    The all rule should recompile only the updated source files
-    The clean, oclean, fclean, re rules should never fail
-    You are not allowed to have a list of all the .o files
+    - CC: the compiler to be used
+    - SRC: the .c files
+    - OBJ: the .o files
+    - NAME: the name of the executable
+    - RM: the program to delete files
+- The all rule should recompile only the updated source files
+- The `clean`, `oclean`, `fclean`, `re` rules should never fail
+- You are not allowed to have a list of all the `.o` files
+```bash
+>  make all -f 3-Makefile
+gcc    -c -o main.o main.c
+gcc    -c -o school.o school.c
+gcc main.o school.o -o school
 
+> make all -f 3-Makefile
+gcc main.o school.o -o school
+
+> make clean -f 3-Makefile
+rm -f *~ school
+
+> make fclean -f 3-Makefile
+rm -f *~ school
+rm -f main.o school.o
+
+> make re -f 3-Makefile
+rm -f main.o school.o
+gcc    -c -o main.o main.c
+gcc    -c -o school.o school.c
+gcc main.o school.o -o school
+```
 -  4. A complete Makefile
 Requirements:
 
