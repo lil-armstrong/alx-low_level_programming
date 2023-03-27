@@ -2,7 +2,7 @@ CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
-RM=$(SRC:.c=.c~)
+RM = rm -f
 
 # all - Build all executable
 all: $(OBJ)
@@ -12,7 +12,7 @@ all: $(OBJ)
 	$(CC) -c $< -o $@
 
 # re - Forces recompilation of all sources
-re: oclean all
+re: fclean all
 
 
 # fclean - deletes all Emacs and Vim temporary files,
@@ -22,10 +22,10 @@ fclean: clean oclean
 
 # clean - deletes all Emacs and Vim temporary files along with the executable
 clean:
-	rm -f *~ $(NAME)
+	${RM} *~ $(NAME)
 
 # oclean - deletes the object files
 oclean:
-	rm -f $(OBJ)
+	${RM} $(OBJ)
 
 
