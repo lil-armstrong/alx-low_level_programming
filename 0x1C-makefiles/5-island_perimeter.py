@@ -13,8 +13,9 @@ def island_perimeter(grid = [[]]):
 	x = len(grid)
 	y = len(grid[0])
 
-	if (not (x > 100 or y > 100)):
+	# print("-----------------------")
 
+	if (not (x > 100 or y > 100)):
 		for iIndex, i in enumerate(grid):
 			for jIndex, j in enumerate(i):
 				# print("grid({}, {}):".format(iIndex, jIndex))
@@ -42,9 +43,11 @@ def island_perimeter(grid = [[]]):
 							# print("\tBottom: {}[{}], ".format(j, val))
 
 					# print("\tgrid({},{}).value => [{}], ".format(iIndex, jIndex, val))
-
+					# print("|{}|".format(val), end=" ")
+				# else:
+				# 	print("| |", end=" ")
 				total += val
-			# print("------------")
+			# print("\n-----------------------")
 
 		# print("\nPerimeter of island: {}".format(total))
 		return total
