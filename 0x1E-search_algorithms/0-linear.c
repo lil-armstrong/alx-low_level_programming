@@ -15,6 +15,7 @@ int linear_search(int *array, size_t size, int value)
 
 	if (array == NULL)
 		return (-1);
+
 	/* Ádd sentinel value*/
 	array[size] = value;
 
@@ -31,4 +32,3 @@ int linear_search(int *array, size_t size, int value)
 
 	return (-1);
 }
-
