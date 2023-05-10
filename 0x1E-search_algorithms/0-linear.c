@@ -15,16 +15,20 @@ int linear_search (int * array, size_t size, int value)
 
 	if (array == NULL)
 		return (-1);
+	/* Ádd sentinel value*/
+	array[size] = value;
 
-	while (index < size)
+	while (array[index] != value)
 	{
 		printf("Value checked array[%zu] = [%d]\n", index, array[index]);
-
-		if (array[index]==value)
-			return (index);
-
 		index++;
 	}
+	/* Remove sentinel value */
+	array[size] = '\0';
+
+	if (index < size)
+		return (index);
+
 	return (-1);
 }
 
