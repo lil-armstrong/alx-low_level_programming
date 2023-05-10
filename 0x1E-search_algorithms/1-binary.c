@@ -13,6 +13,7 @@ int binary_search(int *array, size_t size, int value)
 {
 	int left = 0, right = size - 1;
 	int m;
+
 	if (array == NULL)
 		return (-1);
 
@@ -36,11 +37,13 @@ int binary_search(int *array, size_t size, int value)
  * print_array - Print the array using printf in a more
  * readable fashion
  * @array: input array
- * @size: size of the array
+ * @start: Starting index of the array
+ * @end: Ending index of the array
  */
 void print_array(int *array, size_t start, size_t end)
 {
 	size_t index = start;
+
 	for (; index <= end; ++index)
 	{
 
